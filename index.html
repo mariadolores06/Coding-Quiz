@@ -3,22 +3,37 @@
 
 <head>
     <meta charset="UTF-8">
-    <!-- <meta name="" content="">  -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Coding Quiz</title>
     <link rel="stylesheet" href="./assets/css/style.css"/>
 </head>
 
 <body>
     <header id="header">
-        <h4>View high Scores</h4>
-        <h4>Time:</h4>
+        <div class="view-high-scores">
+            <h4>View high Scores</h4>
+        </div>
+        <div class="time">
+            <h4>Time:</h4>
+         </div>
     </header>
     <div class="container">
         <h1 class="Coding">Coding Quiz</h1>
         <p>Answer the following code-related questions within the time limit. The timer will start once you click Start. Keep in mind that your time will be penalized for any incorrect answers. </p>
-        <button id="start">Start</button>
+        <button id="start-button">Start</button>
     </div>
-
+    <main>
+        <section>
+            <div class= "high-scores">
+                <div class= "win-loss-container">
+                    <div>
+                    <h2> Wins:</h2>
+                    <h2> Losses:</h2>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
 
     <script src="./assets/js/script.js"></script>
