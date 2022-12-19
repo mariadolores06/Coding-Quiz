@@ -1,0 +1,38 @@
+header {
+    margin:auto;
+    text-align:start;
+    background-color: blueviolet;
+    display:flex;
+    justify-content:space-between;
+}
+
+/* #header {
+    display:flex;
+    justify-content:space-between;
+} */
+
+/* .container h1 { */
+.container {
+    text-align: center;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans';
+    border: 3px navy;
+    background:teal;
+}
+
+.container p {
+    text-align: center;
+    background:pink;
+}
+
+button {
+    margin: 0;
+    position: absolute;
+    cursor: pointer;
+    font-size:30px;
+    background-color: darkgray;
+    color:whitesmoke;
+}
+
+button:hover {
+    background:darkgreen;
+}
