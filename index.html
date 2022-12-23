@@ -9,22 +9,49 @@
 </head>
 
 <body>
-    <header id="header">
-        <div class="view-high-scores">
-            <h4>View high Scores</h4>
-        </div>
-        <div class="time">
-            <h4>Time:</h4>
-         </div>
+    <header>
+        <div class="leaderboard-header">View Highscores</div>
+        </div> <time>Time: <span id="time"></span></time></div>
     </header>
     <div class="container">
-        <h1 class="Coding">Coding Quiz</h1>
+        <h1 class="start-card">Coding Quiz</h1>
         <p>Answer the following code-related questions within the time limit. The timer will start once you click Start. Keep in mind that your time will be penalized for any incorrect answers. </p>
         <button id="start-button">Start</button>
     </div>
     <main>
         <section>
-            <div class= "high-scores">
+            <div hidden class="question-card">
+                <h2 id="question-text"></h2>
+                <div id="quiz-options">
+                    <button id="option0" class="button option-button"></button>
+                    <button id="option1" class="button option-button"></button>
+                    <button id="option2" class="button option-button"></button>
+                    <button id="option3" class="button option-button"></button>
+                </div>
+                <div id="result">
+                    <p id="result-text"></p>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div hidden id="score-card">
+                <h2> All done!</h2>
+                </p>You final score is <span id=score></span>.</p>
+                <form class="inline-form" id="submit-form">
+                    <label for="initials">Enter initials:</label>
+                    <input type="text" id="initials">
+                    <button id="submit-button" class="button">Submit</button>
+                </form>
+            </div>
+        </section>
+        <section>
+            <div hidden class= "leaderBoard">
+                <h2>Highscores</h2>
+                <div id="highscore-list">
+                    <div class="in-line-button">
+                        <button id="back-button" class="button">Go Back</button>
+                        <button id="clear-button" class="button">Clear Highscores</button>
+                    </div>
                 <div class= "win-loss-container">
                     <div>
                     <h2> Wins:</h2>
