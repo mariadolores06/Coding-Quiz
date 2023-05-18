@@ -3,8 +3,8 @@ var instructions = document.querySelector(".start-card + p");
 var questionCard = document.querySelector(".question-card");
 var questionText = document.querySelector(".question-card + h2");
 var scoreCard = document.querySelector("#score-card");
-var leaderBoard = document.querySelector(".leaderBoard");
-var startBtn = document.querySelector("#start-button");
+var leaderBoard = document.querySelector(".leader-board");
+var startBtn = document.querySelector("#startBtn");
 var submitBtn = document.querySelector("#submit-button");
 var timeDisplay = document.querySelector("#time");
 var result = document.querySelector("#result");
@@ -50,6 +50,7 @@ var questions = [
 ];
 //set up
 function hideCards() {
+    startBtn.setAttribute("hidden", "false");
     start.setAttribute("hidden", "true");
     questionCard.setAttribute("hidden", "true");
     instructions.setAttribute("hidden", "true");
@@ -61,19 +62,16 @@ function hideResultText() {
     result.style.display = "none";
 }
 
-// startBtn.addEventListener("click", startQuiz);
-
 function startQuiz() {
+
     hideCards();
     questionCard.removeAttribute("hidden");
     currentQuestion = 0;
     displayQuestion();
 
     time = 75;
-    intervals = setInterval(countDown, 1000);
+    intervals = setInterval(countDown, 10000);
     displayTime();
-
-    return;
 }
 
 startBtn.addEventListener("click", startQuiz);
@@ -91,8 +89,8 @@ function displayTime() {
 }
 
 function displayQuestion() {
-    let question = questions[currentQuestion];
-    let options = question.options;
+    var question = questions[currentQuestion];
+    var options = question.options;
     // questionText.textContent = question.questionText;
 
     for (let i = 0; i < options.length; i++) {

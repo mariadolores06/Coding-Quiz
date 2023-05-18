@@ -1,5 +1,5 @@
 header {
-    height: 40px;
+    height: 50px;
     margin:auto;
     text-align:start;
     background-color: gray;
@@ -10,7 +10,7 @@ header {
 
 /* .container h1 { */
 .container {
-    height:40x;
+    height:140px;
     width:100%;
     justify-content: center;
     text-align: center;
@@ -20,6 +20,13 @@ header {
     color:white;
 }
 
+.start-card{
+  height: 140px;
+  width: 80%;
+  background: white;
+  color:blue;
+  justify-content: center;
+}
 /* .container p {
     text-align: center;
     background:pink;
@@ -39,30 +46,29 @@ button:hover {
 }
 
 section { 
-    height: 300px;
+    height: 200px;
     width: 100%;
     background: lightblue;
     border: 5px;
     display: flex;
-    flex-direction: column;
     align-items: center;
-    width:100;
+    justify-content: center;
     padding: 5 15 20 25;
 }
 
 #question-card {
     display:Flex;
-    flex-direction:column;
+    align-items: center;
+    justify-content: center;
     background-color:purple;
     border:10px;
-
 }
 
 #question-text {
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
     text-align: center;
-    justify-content: flex-start;
+    justify-content: center;
     width:50%;
     background-color:black;
 }
@@ -71,15 +77,25 @@ section {
     visibility: hidden;
 }
 
-/* #quiz-options {
-background-color: navy;
-border: 10px;
-justify-content: flex-start;
-} */
+#quiz-options {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction:column;
+}
 
-/* .option-button {
-    width:20%;
-    text-align: left;
+.option-button {
     margin: 5px;
+    width: 100%;
+    margin-left: 50px;
+    border-radius: 25px;
+}
 
-} */
+.option-button:hover {
+    background: purple;
+}
+
+.leader-board {  
+  display:flex;
+  align-items: center;
+}
