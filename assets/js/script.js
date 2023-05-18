@@ -14,38 +14,38 @@ var time;
 var currentQuestion;
 var score = document.querySelector("#score");
 var inputEl = document.querySelector("#initials");
+var highscoreList= document.querySelector("#highscore-list")
 // var viewHighscoreBtn = document.querySelector();
-
 
 var questions = [
     {
-        questionText: 'Commonly used data types DO Not include:',
-        options: ['strings', 'booleans', 'alerts', 'numbers'],
-        correctAnswer: 2
+      questionText: 'Commonly used data types DO Not include:',
+      options: ['strings', 'booleans', 'alerts', 'numbers'],
+      correctAnswer: 2
     },
 
     {
-        questionText: 'The condition in an if/else statement is enclosed with:',
-        options: ['quotes', 'curly brackets', 'parenthesis', 'square brackets'],
-        correctAnswer: 2
+      questionText: 'The condition in an if/else statement is enclosed with:',
+      options: ['quotes', 'curly brackets', 'parenthesis', 'square brackets'],
+      correctAnswer: 2
     },
 
     {
-        questionText: 'Arrays in Javascript can be used to store:',
-        options: ['numbers and strings', 'other arrays', 'booleans', 'all of the above'],
-        correctAnswer: 3
+      questionText: 'Arrays in Javascript can be used to store:',
+      options: ['numbers and strings', 'other arrays', 'booleans', 'all of the above'],
+      correctAnswer: 3
     },
 
     {
-        questionText: 'String values must be enclosed within ______ when being assigned to variables',
-        options: ['commas', 'curly brackets', 'quotes', 'paranthesis'],
-        correctAnswer: 2
+      questionText: 'String values must be enclosed within ______ when being assigned to variables',
+      options: ['commas', 'curly brackets', 'quotes', 'paranthesis'],
+      correctAnswer: 2
     },
 
     {
-        questionText: 'A very useful tool used during development and debugging for printing content to the debugger is:',
-        options: ['javaScript', 'terminal/bash', 'for loops', 'console.log'],
-        correctAnswer: 3
+      questionText: 'A very useful tool used during development and debugging for printing content to the debugger is:',
+      options: ['javaScript', 'terminal/bash', 'for loops', 'console.log'],
+      correctAnswer: 3
     },
 ];
 //set up
@@ -77,15 +77,15 @@ function startQuiz() {
 startBtn.addEventListener("click", startQuiz);
 
 function countDown() {
-    time--;
-    displayTime();
-    if (time <1) {
-        endQuiz();
-    }
+  time--;
+  displayTime();
+  if (time <1) {
+      endQuiz();
+  }
 }
 
 function displayTime() {
-    timeDisplay.textContent = time;
+  timeDisplay.textContent = time;
 }
 
 function displayQuestion() {

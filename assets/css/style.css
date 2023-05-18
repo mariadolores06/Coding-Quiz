@@ -1,68 +1,80 @@
-header {
-    height: 50px;
-    margin:auto;
-    text-align:start;
-    background-color: gray;
-    color: rgb(3, 3, 48);
-    display: flex;
-    justify-content:space-between;
+:root {
+  --primary: #2f3e46;
+  --secondary: #354f52;
+  --light: #cad2c5;
+  --green: #52796f;
+  --lgreen: #84a98c;
+  --lightText: white; 
+  /* --padding-top: 50px;
+  --padding-side: 30px; */
+  --padding: 10 15 20 25;
+  --border-radius: 25px;
+  --smallHeight: 50px;
+  --largeHeight:250px;
+  --direction: column;
+  --font: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans';
 }
 
-/* .container h1 { */
+header {
+    background-color: var(--lgreen);
+    color: var(--secondary);
+    height: var(--height);
+    font-size: 25px;
+    margin: auto;
+    text-align: start;
+    display: flex;
+    justify-content: space-between;
+}
+
 .container {
-    height:250px;
+    height: var(--largeHeight);
     width:100%;
+    background: var(--secondary);
+    display: flex;
+    flex-direction: var(--direction);
     justify-content: center;
+    align-items: center;
     text-align: center;
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans';
-    /* border: 25px navy; */
-    background:rgb(3, 3, 48);
-    color:white;
+    font-family: var(--font);
+    color: var(--lightText)
 }
 
 .start-card{
-  height: 140px;
+  height: var(--largeHeight);
   width: 80%;
-  background: white;
-  color:blue;
   justify-content: center;
 }
-/* .container p {
-    text-align: center;
-    background:pink;
-} */
 
 button {
     margin: 0;
-    /* position: absolute; */
     cursor: pointer;
     font-size:30px;
-    background-color: darkgray;
+    background-color: var(--primary);
     color:whitesmoke;
 }
 
 button:hover {
-    background:darkgreen;
+    background: var(--lgreen);
 }
 
 #result-text {
-    color:white;
+    color: var(--lightText);
     background:fixed;
-    background:red;
+    background: var(--primary);
     justify-content: end;
     flex-direction: column;
-    align-items: center;
+    align-items: start;
+    text-align: center;
 
 }
 section { 
-    height: 200px;
+    height: var(--largeHeight);
     width: 100%;
-    background: lightblue;
-    border: 5px;
+    background: var(--light);
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 10 15 20 25;
+    padding: var(--padding);
 }
 
 #question-card {
@@ -74,12 +86,11 @@ section {
 
 #question-text {
   display: flex;
-  /* flex-direction: column; */
   text-align: center;
+  align-content: start;
   justify-content: center;
   width:100%;
-  /* background:white; */
-  color: purple;
+  color: var(--lightText)
 }
 
 [hidden] {
@@ -87,7 +98,7 @@ section {
 }
 
 #quiz-options {
-    padding-top: 50px;
+    padding: var(--padding);
     display:flex;
     justify-content: center;
     align-items: center;
@@ -102,10 +113,14 @@ section {
 }
 
 .option-button:hover {
-    background: purple;
+    background: var(--lgreen);
 }
 
 .leader-board {  
   display:flex;
   align-items: center;
 }
+
+/* #highscore-list {
+
+} */
