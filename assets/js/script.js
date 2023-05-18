@@ -1,7 +1,7 @@
 var start = document.querySelector(".start-card");
 var instructions = document.querySelector(".start-card + p");
-var questionCard = document.querySelector(".question-card");
-var questionText = document.querySelector(".question-card + h2");
+var questionCard = document.querySelector("#question-card");
+var questionText = document.querySelector("#question-text");
 var scoreCard = document.querySelector("#score-card");
 var leaderBoard = document.querySelector(".leader-board");
 var startBtn = document.querySelector("#startBtn");
@@ -50,12 +50,13 @@ var questions = [
 ];
 //set up
 function hideCards() {
-    startBtn.setAttribute("hidden", "false");
-    start.setAttribute("hidden", "true");
-    questionCard.setAttribute("hidden", "true");
-    instructions.setAttribute("hidden", "true");
-    scoreCard.setAttribute("hidden", "true");
-    leaderBoard.setAttribute("hidden", "true");
+  startBtn.setAttribute("hidden", "false");
+//   start.setAttribute("hidden", "true");
+  questionCard.setAttribute("hidden", "true");
+  instructions.setAttribute("hidden", "true");
+  questionText.setAttribute("hidden", "true");
+  scoreCard.setAttribute("hidden", "true");
+  leaderBoard.setAttribute("hidden", "true");
 }
 
 function hideResultText() {
@@ -63,15 +64,14 @@ function hideResultText() {
 }
 
 function startQuiz() {
+  hideCards();
+  questionText.removeAttribute("hidden");
+  currentQuestion = 0;
+  displayQuestion();
 
-    hideCards();
-    questionCard.removeAttribute("hidden");
-    currentQuestion = 0;
-    displayQuestion();
-
-    time = 75;
-    intervals = setInterval(countDown, 10000);
-    displayTime();
+  time = 75;
+  intervals = setInterval(countDown, 1000);
+  displayTime();
 }
 
 startBtn.addEventListener("click", startQuiz);
@@ -89,9 +89,10 @@ function displayTime() {
 }
 
 function displayQuestion() {
+    questionCard.removeAttribute("hidden")
     var question = questions[currentQuestion];
     var options = question.options;
-    // questionText.textContent = question.questionText;
+    questionText.textContent = question.questionText;
 
     for (let i = 0; i < options.length; i++) {
         var option = options[i];

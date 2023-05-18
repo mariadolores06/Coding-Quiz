@@ -10,7 +10,7 @@ header {
 
 /* .container h1 { */
 .container {
-    height:140px;
+    height:250px;
     width:100%;
     justify-content: center;
     text-align: center;
@@ -45,6 +45,15 @@ button:hover {
     background:darkgreen;
 }
 
+#result-text {
+    color:white;
+    background:fixed;
+    background:red;
+    justify-content: end;
+    flex-direction: column;
+    align-items: center;
+
+}
 section { 
     height: 200px;
     width: 100%;
@@ -53,24 +62,24 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 5 15 20 25;
+    padding: 10 15 20 25;
 }
 
 #question-card {
     display:Flex;
     align-items: center;
     justify-content: center;
-    background-color:purple;
-    border:10px;
+    border:50px;
 }
 
 #question-text {
-    display: flex;
-    /* flex-direction: column; */
-    text-align: center;
-    justify-content: center;
-    width:50%;
-    background-color:black;
+  display: flex;
+  /* flex-direction: column; */
+  text-align: center;
+  justify-content: center;
+  width:100%;
+  /* background:white; */
+  color: purple;
 }
 
 [hidden] {
@@ -78,10 +87,11 @@ section {
 }
 
 #quiz-options {
+    padding-top: 50px;
     display:flex;
     justify-content: center;
     align-items: center;
-    flex-direction:column;
+    flex-direction: column;
 }
 
 .option-button {
