@@ -24,6 +24,9 @@ header {
     justify-content: space-between;
 }
 
+header:hover {
+  background:var(--light);
+}
 
 .container {
     height: var(--largeHeight);
@@ -115,8 +118,6 @@ section {
     margin: 5px;
     width: 100%;
     margin-left: 50px;
-    /* margin-right:50px; */
-    /* border-radius: 25px; */
 }
 
 .option-button:hover {
@@ -131,14 +132,17 @@ section {
   color: var(--secondary);
 }
 
+h2 {
+    text-align: center;
+}
+
 #highscore-list {
   color: var(--lightText);
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: var(--direction);
+  text-align: center;
+ margin-bottom: 20px;
 }
 
-.leadboard-buttons {
-
-}
