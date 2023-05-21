@@ -60,7 +60,7 @@ function hideCards() {
 }
 
 function hideResultText() {
-    result.style.display = "none";
+  result.style.display = "none";
 }
 
 function startQuiz() {
@@ -208,14 +208,13 @@ clearBtn.addEventListener("click", clearHighscores);
 
 function clearHighscores() {
   localStorage.clear();
-  renderLeaderboard();
+  renderLeaderBoard();
 }
 
 backBtn.addEventListener("click", returnToStart);
 
 function returnToStart() {
-  hideCards();
-  start.removeAttribute("hidden");
+  location.reload();
 }
 
 var leaderboardHeader = document.querySelector(".leaderboard-header");
@@ -224,6 +223,7 @@ leaderboardHeader.addEventListener("click", showLeaderboard);
 function showLeaderboard() {
   hideCards();
   leaderBoard.removeAttribute("hidden");
+  startBtn.setAttribute("hidden", "false");
 
   clearInterval(intervals);
   time = undefined;

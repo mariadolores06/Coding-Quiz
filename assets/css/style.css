@@ -126,6 +126,7 @@ section {
 .leader-board {  
   display:flex;
   align-items: center;
+  justify-content: center;
   flex-direction: var(--direction);
   color: var(--secondary);
 }
@@ -138,9 +139,6 @@ section {
   flex-direction: var(--direction);
 }
 
-/* .in-line-button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: var(--direction);
-} */
+.leadboard-buttons {
+
+}
