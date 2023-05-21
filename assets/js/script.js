@@ -22,31 +22,31 @@ var questions = [
     {
       questionText: 'Commonly used data types DO Not include:',
       options: ['strings', 'booleans', 'alerts', 'numbers'],
-      correctAnswer: 2
+      correctAnswer: 'alerts'
     },
 
     {
       questionText: 'The condition in an if/else statement is enclosed with:',
       options: ['quotes', 'curly brackets', 'parenthesis', 'square brackets'],
-      correctAnswer: 2
+      correctAnswer: 'parenthesis'
     },
 
     {
       questionText: 'Arrays in Javascript can be used to store:',
       options: ['numbers and strings', 'other arrays', 'booleans', 'all of the above'],
-      correctAnswer: 3
+      correctAnswer: 'all of the above'
     },
 
     {
       questionText: 'String values must be enclosed within ______ when being assigned to variables',
       options: ['commas', 'curly brackets', 'quotes', 'paranthesis'],
-      correctAnswer: 2
+      correctAnswer: 'quotes'
     },
 
     {
       questionText: 'A very useful tool used during development and debugging for printing content to the debugger is:',
       options: ['javaScript', 'terminal/bash', 'for loops', 'console.log'],
-      correctAnswer: 3
+      correctAnswer: 'console.log'
     },
 ];
 //set up
@@ -104,7 +104,7 @@ function displayQuestion() {
 document.querySelector("#quiz-options").addEventListener("click", checkAnswer);
 
 function optionIsCorrect(optionButton) {
-    return optionButton.textContent === questions [currentQuestion].answer;
+    return optionButton.textContent === questions [currentQuestion].correctAnswer;
 }
 
 function checkAnswer(eventObject) {
@@ -134,10 +134,10 @@ function checkAnswer(eventObject) {
 }
 
 function endQuiz() {
-    clearInterval(intervals);
-    hideCards();
-    scoreCard.removeAttribute("hidden");
-    score.textContent = time;
+  clearInterval(intervals);
+  hideCards();
+  scoreCard.removeAttribute("hidden");
+  score.textContent = time;
 }
 
 submitBtn.addEventListener("click", storeScore);
@@ -161,15 +161,15 @@ function storeScore(event) {
   leaderBoard.removeAttribute("hidden");
   
   renderLeaderBoard();
-  }
+}
 
-  function updateLeaderBoard(leaderboardItems) {
-    let leaderboardArray = getLeaderBoard();
-    leaderboardArray.push(leaderboardItems);
-    localStorage.setItem("leaderboardArray", JSON.stringify(leaderboardArray));
-  }
+function updateLeaderBoard(leaderboardItems) {
+  let leaderboardArray = getLeaderBoard();
+  leaderboardArray.push(leaderboardItems);
+  localStorage.setItem("leaderboardArray", JSON.stringify(leaderboardArray));
+}
 
-  function getLeaderBoard() {
+function getLeaderBoard() {
   let storedLeaderboard = localStorage.getItem("leaderboardArray");
   if (storedLeaderboard !== null) {
       let leaderboardArray = JSON.parse(storedLeaderboard);
@@ -190,7 +190,8 @@ for (let i=0; i < sortedLeaderboardArray.length; i++) {
     newListItem.textContent =
     leaderboardEntry.initials + " - " + leaderboardEntry.score;
     highscoreList.append(newListItem);
-}}
+  } 
+}
 
 function orderedLeaderboard() {
   let leaderboardArray = getLeaderBoard();

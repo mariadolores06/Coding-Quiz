@@ -51,7 +51,6 @@ button {
     background-color: var(--primary);
     color:whitesmoke;
     border-radius: var(--border-radius);
-
 }
 
 button:hover {
@@ -61,7 +60,7 @@ button:hover {
 #result-text {
     color: var(--lightText);
     background:fixed;
-    background: var(--primary);
+    background: rgb(222, 88, 88);
     justify-content: end;
     flex-direction: column;
     align-items: start;
