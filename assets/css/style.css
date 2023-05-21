@@ -5,8 +5,6 @@
   --green: #52796f;
   --lgreen: #84a98c;
   --lightText: white; 
-  /* --padding-top: 50px;
-  --padding-side: 30px; */
   --padding: 10 15 20 25;
   --border-radius: 25px;
   --smallHeight: 50px;
@@ -25,6 +23,7 @@ header {
     display: flex;
     justify-content: space-between;
 }
+
 
 .container {
     height: var(--largeHeight);
@@ -51,6 +50,8 @@ button {
     font-size:30px;
     background-color: var(--primary);
     color:whitesmoke;
+    border-radius: var(--border-radius);
+
 }
 
 button:hover {
@@ -65,15 +66,16 @@ button:hover {
     flex-direction: column;
     align-items: start;
     text-align: center;
-
 }
+
 section { 
-    height: var(--largeHeight);
+    height: 500px;
     width: 100%;
     background: var(--light);
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: var(--direction);
     padding: var(--padding);
 }
 
@@ -82,6 +84,8 @@ section {
     align-items: center;
     justify-content: center;
     border:50px;
+    width:100%;
+    height: 250px;
 }
 
 #question-text {
@@ -106,10 +110,14 @@ section {
 }
 
 .option-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin: 5px;
     width: 100%;
     margin-left: 50px;
-    border-radius: 25px;
+    /* margin-right:50px; */
+    /* border-radius: 25px; */
 }
 
 .option-button:hover {
@@ -119,8 +127,21 @@ section {
 .leader-board {  
   display:flex;
   align-items: center;
+  flex-direction: var(--direction);
+  color: var(--secondary);
 }
 
-/* #highscore-list {
+#highscore-list {
+  color: var(--lightText);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: var(--direction);
+}
 
+/* .in-line-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: var(--direction);
 } */

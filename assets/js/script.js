@@ -3,7 +3,7 @@ var instructions = document.querySelector(".start-card + p");
 var questionCard = document.querySelector("#question-card");
 var questionText = document.querySelector("#question-text");
 var scoreCard = document.querySelector("#score-card");
-var leaderBoard = document.querySelector(".leader-board");
+var leaderBoard = document.querySelector("#leader-board");
 var startBtn = document.querySelector("#startBtn");
 var submitBtn = document.querySelector("#submit-button");
 var timeDisplay = document.querySelector("#time");
@@ -14,8 +14,9 @@ var time;
 var currentQuestion;
 var score = document.querySelector("#score");
 var inputEl = document.querySelector("#initials");
-var highscoreList= document.querySelector("#highscore-list")
-// var viewHighscoreBtn = document.querySelector();
+var highscoreList= document.querySelector("#highscore-list");
+var clearBtn = document.querySelector("#clear-button");
+var backBtn = document.querySelector("#back-button");
 
 var questions = [
     {
@@ -51,7 +52,6 @@ var questions = [
 //set up
 function hideCards() {
   startBtn.setAttribute("hidden", "false");
-//   start.setAttribute("hidden", "true");
   questionCard.setAttribute("hidden", "true");
   instructions.setAttribute("hidden", "true");
   questionText.setAttribute("hidden", "true");
@@ -143,94 +143,91 @@ function endQuiz() {
 submitBtn.addEventListener("click", storeScore);
 
 function storeScore(event) {
-    event.preventDefault();
+  event.preventDefault();
 
-let leaderboardItems = {
+   if (!inputEl.value) {
+   alert("Invalid Response. Please enter your initials.");
+   return;
+   }
+
+   let leaderboardItems = {
     initials: inputEl.value,
     score: time,
-};
+   };
 
-updateStoredLeaderboard(leaderboardItems);
-hideCards();
-leaderBoard.removeAttribute("hidden");
-renderLeaderboard();
-}
+  updateLeaderBoard(leaderboardItems);
 
-function updateStoredLeaderboard(leaderboardItems) {
-    let leaderboardArray = getLeaderboard();
+  hideCards();
+  leaderBoard.removeAttribute("hidden");
+  
+  renderLeaderBoard();
+  }
+
+  function updateLeaderBoard(leaderboardItems) {
+    let leaderboardArray = getLeaderBoard();
     leaderboardArray.push(leaderboardItems);
     localStorage.setItem("leaderboardArray", JSON.stringify(leaderboardArray));
+  }
+
+  function getLeaderBoard() {
+  let storedLeaderboard = localStorage.getItem("leaderboardArray");
+  if (storedLeaderboard !== null) {
+      let leaderboardArray = JSON.parse(storedLeaderboard);
+      return leaderboardArray;
+  } else{
+      leaderboardArray = [];
+  }
+  return leaderboardArray;
 }
 
-function getLeaderboard() {
-    let storedLeaderboard = localStorage.getItem("leaderboardArray");
-    if (storedLeaderboard !== null) {
-        let leaderboardArray = JSON.parse(storedLeaderboard);
-        return leaderboardArray;
-    } else{
-        leaderboardArray = [];
-    }
-    return leaderboardArray;
+function renderLeaderBoard() {
+let sortedLeaderboardArray = orderedLeaderboard();
+var highscoreList = document.querySelector("#highscore-list");
+highscoreList.innerHTML = "";
+for (let i=0; i < sortedLeaderboardArray.length; i++) {
+    let leaderboardEntry = sortedLeaderboardArray[i];
+    let newListItem = document.createElement("li");
+    newListItem.textContent =
+    leaderboardEntry.initials + " - " + leaderboardEntry.score;
+    highscoreList.append(newListItem);
+}}
+
+function orderedLeaderboard() {
+  let leaderboardArray = getLeaderBoard();
+  if (!leaderboardArray) {
+      return;
+  }
+  leaderboardArray.sort(function (a, b) {
+      return b.score - a.score;
+  } );
+  return leaderboardArray;
 }
 
-function renderLeaderboard() {
-    let sortedLeaderboardArray = sortLeaderboard();
-    var highscoreList = document.querySelector("#highscore-list");
-    highscoreList.innerHTML = "";
-    for (let i=0; i < sortedLeaderboardArray.length; i++) {
-        let leaderboardEntry = sorted.leaderboardArray[i];
-        let newListItem = document.createElement("li");
-        newListItem.textContent =
-        leaderboardEntry.initials + " - " + leaderboardEntry.score;
-        highscoreList.append(newListItem);
-    }
-}
-
-function sortLeaderboard() {
-    let leaderboardArray = getLeaderboard();
-    if (!leaderboardArray) {
-        return;
-    }
-    leaderboardArray.sort(function (a, b) {
-        return b.score - a.score;
-    } );
-    return leaderboardArray;
-}
-
-var clearBtn = document.querySelector("#clear-button");
 clearBtn.addEventListener("click", clearHighscores);
 
 function clearHighscores() {
-    localStorage.clear();
-    renderLeaderboard();
+  localStorage.clear();
+  renderLeaderboard();
 }
 
-var backBtn = document.querySelector("#back-button");
 backBtn.addEventListener("click", returnToStart);
 
 function returnToStart() {
-    hideCards();
-    start.removeAttribute("hidden");
+  hideCards();
+  start.removeAttribute("hidden");
 }
 
 var leaderboardHeader = document.querySelector(".leaderboard-header");
 leaderboardHeader.addEventListener("click", showLeaderboard);
 
 function showLeaderboard() {
-    hideCards();
-    leaderBoard.removeAttribute("hidden");
+  hideCards();
+  leaderBoard.removeAttribute("hidden");
 
-    clearInterval(intervals);
+  clearInterval(intervals);
+  time = undefined;
+  displayTime();
 
-    time = undefined;
-    displayTime();
+  renderLeaderBoard();
 
-    renderLeaderboard();
 }
-
-
-
-
-
-// // function setTimerText() {
-// //     timeEl.textContent = time;
