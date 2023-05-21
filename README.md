@@ -3,8 +3,10 @@
 ## Description
 This challenge was created to prepare you for interviews on your journey to becoming a developer. It is likely that you will be asked to complete a coding assessment as part of the interview process. To become more familiar with these tests, I built a timed coding quiz with multiple-choice questions. 
 
-https://github.com/mariadolores06/Coding-Quiz/blob/main/assets/images/preview1.png
-https://github.com/mariadolores06/Coding-Quiz/blob/main/assets/images/preview2.png
+<img width="1272" alt="preview1" src="https://github.com/mariadolores06/Coding-Quiz/assets/118150524/7d3c2c44-5201-4657-8585-c9a34caa8efd">
+<img width="1273" alt="preview2" src="https://github.com/mariadolores06/Coding-Quiz/assets/118150524/3de199f6-3390-4bb5-bd67-5c32b17010c7">
+
+
 
 ## Installation 
 N/A
